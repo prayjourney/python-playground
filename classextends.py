@@ -15,6 +15,7 @@ class Animal:
     '''
     动物类
     '''
+
     def __init__(self, kind):
         self.kind = kind
 
@@ -26,6 +27,7 @@ class Bear(Animal):
     '''
     熊
     '''
+
     # python之中只能定义一个构造函数?------>貌似只能有一个构造函数
     # 第一个继承构造函数
     def __init__(self, kind, weight, color):
@@ -35,28 +37,28 @@ class Bear(Animal):
 
     # 第二个继承构造函数
     # def __init__(self, kind, color):
-        # Animal.__init__(self, kind)
-        # self.color = color
+    # Animal.__init__(self, kind)
+    # self.color = color
 
     def getinfo(self):
-        strinfo = ""
+        strinfo1 = ""
+        strinfo2 = ""
+        strinfo3 = ""
         # hasattr判断某个对象是否有某属性
-        if(hasattr(self, "kind")):
-            strinfo = "kind is: " + self.kind
-
-        if(hasattr(self, "origin")):
-            strinfo = "origin is: " + self.origin
-
-        if(hasattr(self, "origin")):
-            strinfo = "color is: " + self.color
-
-        return strinfo
+        if (hasattr(self, "kind")):
+            strinfo1 = "kind is: " + self.kind
+        if (hasattr(self, "weight")):
+            strinfo2 = "weight is: " + self.weight
+        if (hasattr(self, "color")):
+            strinfo3 = "color is: " + self.color
+        return (strinfo1 + strinfo2 + strinfo3).strip()
 
 
 class People(Animal):
     '''
     人
     '''
+
     # 使用super的方式来定义构造函数
     def __init__(self, kind, nation):
         # super这种调用不行了？
@@ -65,16 +67,17 @@ class People(Animal):
         self.nation = nation
 
     def peopeinfo(self):
-        return "info is :" + self.kind + ", " + self.nation
+        return ",  info is :" + self.kind + ", " + self.nation
 
     def getkind(self):
-        return ("这是一个" + self.kind + "aaa!")
+        return (",  这是一个" + self.kind + "aaa!")
 
 
 class Land:
     '''
     土地
     '''
+
     def __init__(self, land_name):
         self.land_name = land_name
 
@@ -101,17 +104,16 @@ class Land:
 # strinfo = super(People,self).peopeinfo(self)
 # strinfo = strinfo + self.profession
 
-
 if __name__ == "__main__":
     fish = Animal("鲸鱼")
     print(fish.getkind())
 
-    polorbear = Bear(kind ="北极熊", weight = 200, color ="")
-    tedbear = Bear(kind ="泰迪熊", weight = "", color = "yellow")
+    polorbear = Bear("kind=北极熊", weight="180", color= "white")
+    tedbear = Bear(kind="泰迪熊", weight="222", color="yellow")
     print(polorbear.getinfo())
     print(tedbear.getinfo())
 
-    chinese = People("中国人","汉族")
+    chinese = People("中国人", "汉族")
     # 调用People类的方法
     print(chinese.getkind())
     # 调用父类的方法

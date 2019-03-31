@@ -4,6 +4,7 @@ import os, time
 class和method的定义和创建方法
 '''
 
+
 # class
 class Test:
     role = 'person'
