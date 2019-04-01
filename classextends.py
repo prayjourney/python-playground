@@ -129,8 +129,9 @@ if __name__ == "__main__":
     # 调用People类的方法
     print(chinese.getkind())
 
-    # 调用父类的方法
+    # 调用父类的方法,第一种方式
     print(super(People, chinese).getkind())
+    # 调用父类的方法,第二种方式
     print(chinese.peopeinfo())
     # 调用父类中有,子类之中没有的方法
     print(chinese.speak())
