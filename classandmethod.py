@@ -1,4 +1,4 @@
-# -*- coding = utf-8 -*-
+# -*- encoding: utf-8 -*-
 import os, time
 '''
 class和method的定义和创建方法
@@ -25,6 +25,7 @@ def iom(x):
 
 """
 作用:
+
     在以md结尾的文件之中, 在首行添加需要的内容
 参数:
     filepath是文件的路径

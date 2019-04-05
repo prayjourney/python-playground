@@ -81,5 +81,5 @@ if __name__ == '__main__':
     str_categories = "categories:\n  - X\n  - X\n"
     str_last = "---\n"
     info_list = [str_first, str_title, str_date, str_tags, str_categories, str_last]
-    writeInfo4FileList("C://Users//Administrator//Desktop//s1", info_list)
+    writeInfo4FileList("C://src-repo//hexo-blog//source//_posts", info_list)
     print("okay")
