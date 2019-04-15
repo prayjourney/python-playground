@@ -23,7 +23,14 @@ $             匹配字符串末尾, 多行则每一行都匹配
 '''
 
 import re, os, random
+import requests
 
+# 打印一个随机数
+print(random.randint(1,1000))
+print(random.random())
+
+
+## 正则表达式
 # 字符完全匹配
 txt = "123 hello world"
 regex = "hello"
@@ -36,6 +43,34 @@ regex2 = "\d{1,4}.*l{2}"
 ss =re.findall(regex2, txt2)
 print(ss)
 
-# 打印一个随机数
-print(random.randint(1,1000))
-print(random.random())
+
+txt3 ="100.值十大风口浪尖222.44,你好阿什顿飞1aa156"
+regex3 ="\d{1,3}"
+result =re.findall(regex3, txt3)
+print(result)
+
+
+# request获取网页源码
+# html =requests.get("http://exercise.kingname.info/exercise_requests_get.html")
+# html_bytes = html.content
+# html_str =html_bytes.decode()
+# print(html_str)
+
+# request获取网页源码
+# html2 =requests.get("https://www.baidu.com/")
+# html_bytes2 = html2.content
+# html_str2 =html_bytes.decode()
+# print(html_str2)
+
+res = requests.get("https://github.com/timeline.json") 
+print(res.text)
+
+# Python包中__init__.py作用
+'''
+[Python包中__init__.py作用](https://www.cnblogs.com/AlwinXu/p/5598543.html)
+总结：
+__init__.py的主要作用是:
+1. Python中package的标识, 不能删除
+2. 定义__all__用来模糊导入
+3. 编写Python代码(不建议在__init__中写python模块, 可以在包中在创建另外的模块来写, 尽量保证__init__.py简单)
+'''
