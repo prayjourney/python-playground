@@ -34,14 +34,15 @@ print(random.random())
 # 字符完全匹配
 txt = "123 hello world"
 regex = "hello"
-ss =re.findall(regex, txt)
+ss = re.findall(regex, txt)
 print(ss)
 
 # 使用简单正则匹配
 txt2 = "123 hmmmmello world"
 regex2 = "\d{1,4}.*l{2}"
-ss =re.findall(regex2, txt2)
+ss = re.findall(regex2, txt2)
 print(ss)
+
 
 
 txt3 ="100.值十大风口浪尖222.44,你好阿什顿飞1aa156"
@@ -77,5 +78,9 @@ __init__.py的主要作用是:
 
 # 格式化文本或者字符串
 # %s是字符串, %d是数字
-s123 = "nihoa %s, dsfafdsafasf %s , %d"%("123dsfasf","ffff",10)
+s123 = "nihoa %s, dsfafdsafasf %s , %d" %("123dsfasf", "ffff", 10)
 print(s123)
+
+# 打印一个随机数
+print(random.randint(1, 1000))
+print(random.random())
