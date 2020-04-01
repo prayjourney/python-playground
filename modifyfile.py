@@ -19,7 +19,7 @@ def appendInfo4File(file_path, list_info):
         size = len(list_info)
         content_temp = f.readline()
         # 使用readline来完成读取文件内容的任务, 查看第一行的内容是否重复即可
-        if(list_info[0] == content_temp):
+        if (list_info[0] == content_temp):
             return
         else:
             # 将list_info之中的内容写入到文本之中
@@ -27,7 +27,7 @@ def appendInfo4File(file_path, list_info):
             str = ""
             for x in range(size):
                 str = str + list_info[x]
-            
+
             # 不能丢了标题
             str_content = str + content_temp + data
         # 字符指针跳到第一行, 添加指定的内容

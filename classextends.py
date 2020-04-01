@@ -1,5 +1,5 @@
 # coding = utf-8
-'''
+"""
 继承之中的问题:
 1.继承的语法, 主要是对于构造函数的调用
     先后顺序, 先调用第一个继承的类, 后续依次序调用, 子类的参数自行实例化
@@ -10,13 +10,13 @@
 3.对于父类方法的调用
     使用super关键字, 将类和对象作为第一个第二个参数, 调用到的就是父类方法
     super(People, chinese).getkind())
-'''
+"""
 
 
 class Animal:
-    '''
+    """
     动物类
-    '''
+    """
 
     def __init__(self, kind):
         self.kind = kind
@@ -26,9 +26,9 @@ class Animal:
 
 
 class Bear(Animal):
-    '''
+    """
     熊
-    '''
+    """
 
     # python之中只能定义一个构造函数?------>貌似只能有一个构造函数
     # 第一个继承构造函数
@@ -57,9 +57,9 @@ class Bear(Animal):
 
 
 class People(Animal):
-    '''
+    """
     人
-    '''
+    """
 
     # 使用super的方式来定义构造函数
     def __init__(self, kind, nation):
@@ -80,9 +80,9 @@ class People(Animal):
 
 
 class Land:
-    '''
+    """
     土地
-    '''
+    """
 
     def __init__(self, land_name):
         self.land_name = land_name
@@ -115,12 +115,13 @@ class Taiwangirl(People, Land):
         strinfo = super(People, self).peopeinfo(self)
         strinfo = strinfo + self.profession
 
+
 if __name__ == "__main__":
     fish = Animal("鲸鱼")
     print(fish.getkind())
 
     # 覆写自己的代码
-    polorbear = Bear("kind=北极熊", weight="180", color= "white")
+    polorbear = Bear("kind=北极熊", weight="180", color="white")
     tedbear = Bear(kind="泰迪熊", weight="222", color="yellow")
     print(polorbear.getinfo())
     print(tedbear.getinfo())

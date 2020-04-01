@@ -67,11 +67,12 @@ class Teacher(Person):
     def getsalary(self):
         return self.salary
 
-    def updatesalary(self,number):
-        self.salary=self.salary+number
+    def updatesalary(self, number):
+        self.salary = self.salary + number
 
     def printinfo(self):
         print(self.salary)
+
 
 class Interest():
     def __init__(self, interest):
@@ -157,7 +158,7 @@ class StudentTypeB(Interest, Student):
               ", " + str(self.rank) + ", " + self.interest)
 
     def printinterest(self):
-        print("子类对象的interest是:"+self.interest)
+        print("子类对象的interest是:" + self.interest)
 
 
 if __name__ == "__main__":
@@ -181,7 +182,6 @@ if __name__ == "__main__":
     stb.printinfo()  # 子类的方法覆盖了父类的方法
     stb.printinterest()  # 调用子类的方法
     Interest.printinterest(stb)  # 调用父类的方法
-
 
     # http://blog.csdn.net/goodluckac/article/details/53100957
     # https://www.cnblogs.com/chenlin163/p/7307962.html

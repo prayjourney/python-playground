@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import os, time
+
 '''
 class和method的定义和创建方法
 '''

@@ -1,5 +1,7 @@
 # -*- coding = utf-8 -*-
 import os
+
+
 # import time
 
 
@@ -9,7 +11,7 @@ def getPathFileList(root):
         path可以是文件或者文件夹, 返回符合条件文件的全路径的列表
     '''
     file_list = []
-    if(os.path.isfile(root)):
+    if (os.path.isfile(root)):
         file_list.append(root)
     else:
         getDirFileList(root, file_list)
@@ -24,9 +26,9 @@ def getDirFileList(root, file_list):
     list1 = os.listdir(root)
     for x in range(len(list1)):
         full_file_str = root + "//" + list1[x]
-        if(os.path.isfile(full_file_str) and full_file_str.endswith(".md")):
+        if (os.path.isfile(full_file_str) and full_file_str.endswith(".md")):
             file_list.append(full_file_str)
-        if(os.path.isdir(full_file_str)):
+        if (os.path.isdir(full_file_str)):
             getDirFileList(full_file_str, file_list)
 
 
@@ -47,7 +49,7 @@ def appendInfo4File(file_path, list_info):
         size = len(list_info)
         content_temp = f.readline()
         # 使用readline来完成读取文件内容的任务, 查看第一行的内容是否重复即可
-        if(list_info[0] == content_temp):
+        if (list_info[0] == content_temp):
             return
         else:
             # 将list_info之中的内容写入到文本之中
@@ -55,7 +57,7 @@ def appendInfo4File(file_path, list_info):
             str = ""
             for x in range(size):
                 str = str + list_info[x]
-            
+
             # 不能丢了标题
             str_content = str + content_temp + data
         # 字符指针跳到第一行, 添加指定的内容
@@ -66,7 +68,7 @@ def appendInfo4File(file_path, list_info):
 def writeInfo4FileList(path, info):
     file_list = getPathFileList(path)
     size_list = len(file_list)
-    if(size_list == 0):
+    if (size_list == 0):
         raise "file_list is null! please check!"
     else:
         for file_index in range(size_list):

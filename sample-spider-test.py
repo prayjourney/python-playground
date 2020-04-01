@@ -1,5 +1,5 @@
 # encoding : utf-8
-'''
+"""
 基本语法
 一般字符       匹配自身
 .             除了换行符之外的任意一个字符
@@ -20,17 +20,16 @@
 ^             匹配字符串开头, 多行则每一行都匹配
 $             匹配字符串末尾, 多行则每一行都匹配
 |             匹配|号左右的任意一个
-'''
+"""
 
 import re, os, random
 import requests
 
 # 打印一个随机数
-print(random.randint(1,1000))
+print(random.randint(1, 1000))
 print(random.random())
 
-
-## 正则表达式
+# 正则表达式
 # 字符完全匹配
 txt = "123 hello world"
 regex = "hello"
@@ -43,13 +42,10 @@ regex2 = "\d{1,4}.*l{2}"
 ss = re.findall(regex2, txt2)
 print(ss)
 
-
-
-txt3 ="100.值十大风口浪尖222.44,你好阿什顿飞1aa156"
-regex3 ="\d{1,3}"
-result =re.findall(regex3, txt3)
+txt3 = "100.值十大风口浪尖222.44,你好阿什顿飞1aa156"
+regex3 = "\d{1,3}"
+result = re.findall(regex3, txt3)
 print(result)
-
 
 # request获取网页源码
 # html =requests.get("http://exercise.kingname.info/exercise_requests_get.html")
@@ -63,7 +59,7 @@ print(result)
 # html_str2 =html_bytes.decode()
 # print(html_str2)
 
-res = requests.get("https://github.com/timeline.json") 
+res = requests.get("https://github.com/timeline.json")
 print(res.text)
 
 # Python包中__init__.py作用
@@ -78,7 +74,7 @@ __init__.py的主要作用是:
 
 # 格式化文本或者字符串
 # %s是字符串, %d是数字
-s123 = "nihoa %s, dsfafdsafasf %s , %d" %("123dsfasf", "ffff", 10)
+s123 = "nihoa %s, dsfafdsafasf %s , %d" % ("123dsfasf", "ffff", 10)
 print(s123)
 
 # 打印一个随机数
