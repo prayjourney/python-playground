@@ -1,9 +1,12 @@
 # coding:utf-8
-"""
-四大内置元素，都可以通过xxx[1]， xxx[index]这种方式来获取值
-而xxx(a)，这种方式，是调用方法，然后传入参数的方式
-"""
+
+
 class InnerDataStructure:
+    """
+    四大内置元素，都可以通过xxx[1]， xxx[index]这种方式来获取值
+    而xxx(a)，这种方式，是调用方法，然后传入参数的方式
+    """
+
     def __init__(self):
         pass
 
@@ -62,14 +65,17 @@ class InnerDataStructure:
     lam = lambda self, aa: aa * aa
 
 
+# 这个是文件之中的方法，不是类方法
 def opt_file(file_path):
-    t = open(file_path, 'r') #打开文件路径
+    t = open(file_path, 'r')  # 打开文件路径
     print(t.closed)
     t.close()
+
 
 class Girl:
     # 类变量
     info = '88元人民币'
+
     # 不需要定义变量, 只能有一个初始化函数吗？
     # !!!一个类只能有一个init初始化函数!!!
     # https://zhidao.baidu.com/question/1370573407628809939.html
@@ -85,6 +91,7 @@ class Girl:
 
     def print_all_info(self):
         print("name is " + str(self.name) + "age is " + str(self.age))
+
 
 # 使用lambda表达式，在类的外部使用
 my_lambda = lambda a1, a2: a1 if a1 > a2 else a2
@@ -116,3 +123,5 @@ if __name__ == '__main__':
     girlB = Girl("小红", 22)
     girlA.print_name()
     girlB.print_all_info()
+    print(girlA.info)
+    print(Girl.info)
