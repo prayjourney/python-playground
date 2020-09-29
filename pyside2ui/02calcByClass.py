@@ -1,6 +1,7 @@
 from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton,  QPlainTextEdit,QMessageBox
 
-class Stats():
+class CalcSalary():
+    # 初始化
     def __init__(self):
         self.window = QMainWindow()
         self.window.resize(500, 400)
@@ -17,7 +18,7 @@ class Stats():
 
         self.button.clicked.connect(self.handleCalc)
 
-
+    # 计算逻辑
     def handleCalc(self):
         info = self.textEdit.toPlainText()
 
@@ -43,7 +44,7 @@ class Stats():
                     )
 
 app = QApplication([])
-stats = Stats()
+stats = CalcSalary()
 stats.window.show()
 app.exec_()
 
