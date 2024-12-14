@@ -1,7 +1,7 @@
 # 普通的方式启动，虽然是按照顺序的，但是越清楚越好
 from PySide6.QtWidgets import QApplication
 
-from pyside2.calcByClass import CalcSalary
+from pyside6_demo.calcByClass import CalcSalary
 
 if __name__ == "__main__":
     app = QApplication([])
