@@ -28,7 +28,7 @@ def getinputcontent(path):
 
 
 if __name__ == "__main__":
-    path = "c://Users//r00478401//Desktop//le//xxx.txt"
+    path = "zen.txt"
     print("即将开始输入工作...\n")
     inputwords(path)
     print("内容是:\n")

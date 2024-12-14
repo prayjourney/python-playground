@@ -11,12 +11,12 @@ def do_file(path):
     # Character Meaning
     # --------- ---------------------------------------------------------------
     # 'r'       open for reading (default)
-    # 'w'       open for writing, truncating the file first
-    # 'x'       create a new file and open it for writing
-    # 'a'       open for writing, appending to the end of the file if it exists
+    # 'w'       open for writing, truncating the py_file first
+    # 'x'       create a new py_file and open it for writing
+    # 'a'       open for writing, appending to the end of the py_file if it exists
     # 'b'       binary mode
     # 't'       text mode (default)
-    # '+'       open a disk file for updating (reading and writing)
+    # '+'       open a disk py_file for updating (reading and writing)
     # 'U'       universal newline mode (deprecated)
     # ========= ===============================================================
     print(path)
@@ -77,7 +77,7 @@ def file_exception(path):
 
 
 if __name__ == '__main__':
-    path = 'D:\\hello.txt'
+    path = 'D:\\zen.txt'
     do_file(path)
     path2 = "D:\\临江仙·柳絮.txt"
     write_poem(path2)
