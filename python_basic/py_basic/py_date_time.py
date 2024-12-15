@@ -27,5 +27,16 @@ def get_date_time():
     print("next_day: ", next_day)
 
 
+def get_time_without_mill():
+    now = datetime.datetime.now()
+    formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
+    print("no mill: ", formatted_time)
+
+    now_time = datetime.datetime.now()
+    now_time_without_microseconds = now_time.replace(microsecond=0)
+    print(now_time_without_microseconds)
+
+
 if __name__ == '__main__':
     get_date_time()
+    get_time_without_mill()
