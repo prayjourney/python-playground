@@ -6,34 +6,34 @@ def __init__(self,A,B,C):
     super(子类,self).__init__(A,B)
     self.C = C
 说明：def的__init__是子类的初始化方法，其中的A,B,C是初始化对象需要的参数，
-      使用super初始化时候，其返回的是一个父类对象，相当于父类对象调用了它自己的初始化函数，
-      此处的A,B都是父类的参数，当取得一个父类对象时候，然后再在此个对象的基础上，添加属性C
-      完成对子类的初始化
+    使用super初始化时候，其返回的是一个父类对象，相当于父类对象调用了它自己的初始化函数，
+    此处的A,B都是父类的参数，当取得一个父类对象时候，然后再在此个对象的基础上，添加属性C
+    完成对子类的初始化
 
 方法2:直接使用父类完成初始化
 def __init__(self,A,B,C):
     父类.__init__(A,B)
     self.C = C
 说明：def的__init__是子类的初始化方法，其中的A,B,C是初始化对象需要的参数，
-      使用父类调用init,返回的是一个父类对象，相当于父类对象调用了它自己的初始化函数，
-      此处的A,B都是父类的参数，当取得一个父类对象时候，然后再在此个对象的基础上，添加属性C
-      完成对子类的初始化
+    使用父类调用init,返回的是一个父类对象，相当于父类对象调用了它自己的初始化函数，
+    此处的A,B都是父类的参数，当取得一个父类对象时候，然后再在此个对象的基础上，添加属性C
+    完成对子类的初始化
 
 """
-
 """
 在python中继承中的一些特点：
 
 1：在继承中基类的构造（__init__()方法）不会被自动调用，它需要在其派生类的构造中亲自专门调用。
-   使用super().__init__()或parentClassName.__init__()
+    使用super().__init__()或parentClassName.__init__()
 2：在调用基类的方法时，需要加上基类的类名前缀，且需要带上self参数变量。
-   区别于在类中调用普通函数时并不需要带上self参数
+    区别于在类中调用普通函数时并不需要带上self参数
 3：Python总是首先查找对应类型的方法，如果它不能在派生类中找到对应的方法，它才开始到基类中逐个查找。
-  （先在本类中查找调用的方法，找不到才去基类中找）
+    （先在本类中查找调用的方法，找不到才去基类中找）
 """
 
 
 class Person():
+
     def __init__(self, name, gender):
         self.name = name
         self.gender = gender
@@ -41,6 +41,7 @@ class Person():
 
 # 单继承
 class Student(Person):
+
     def __init__(self, name, gender, score):
         super(Student, self).__init__(name, gender)  # 重点，使用super函数来初始化此类
         self.score = score
@@ -58,6 +59,7 @@ class Student(Person):
 
 
 class Teacher(Person):
+
     def __init__(self, name, gender, salary):
         Person.__init__(self, name, gender)
         self.salary = salary
@@ -75,6 +77,7 @@ class Teacher(Person):
 
 
 class Interest():
+
     def __init__(self, interest):
         self.interest = interest
 
@@ -88,7 +91,9 @@ class Interest():
 # 多继承
 # MRO问题
 class ChineseStudent(Student, Person):
-    def __int__(self, name, gender, score, speciality):  # 此处是ChineseStudent类需要初始化的参数
+
+    def __int__(self, name, gender, score,
+                speciality):  # 此处是ChineseStudent类需要初始化的参数
         super(ChineseStudent, self).__init__(name, gender, score)
         self.speciality = speciality
         # super(ChineseStudent, self)返回的是Student,在接下来，使用返回的Student对象，添加speciality属性
@@ -117,8 +122,10 @@ class ChineseStudent(Student, Person):
 #     def setspeciality(self, speciality):
 #         self.speciality = speciality
 
+
 # 爱学习的学生
 class StudentTypeA(Student, Interest):
+
     def __init__(self, name, gender, score, rank, interest):
         super(StudentTypeA, self).__init__(name, gender, score)
         self.rank = rank
@@ -128,12 +135,12 @@ class StudentTypeA(Student, Interest):
         self.rank = rank
 
     def printinfo(self):
-        print(self.name + ", " + self.gender + ", " + str(self.score) +
-              ", " + str(self.rank) + ", " + self.interest)
+        print(self.name + ", " + self.gender + ", " + str(self.score) + ", " + str(self.rank) + ", " + self.interest)
 
 
 # 爱玩耍的学生
 class StudentTypeB(Interest, Student):
+
     def __init__(self, name, gender, score, rank, interest):
         super(StudentTypeB, self).__init__(interest)
         self.name = name
@@ -154,8 +161,7 @@ class StudentTypeB(Interest, Student):
         self.rank = rank
 
     def printinfo(self):
-        print(self.name + ", " + self.gender + ", " + str(self.score) +
-              ", " + str(self.rank) + ", " + self.interest)
+        print(self.name + ", " + self.gender + ", " + str(self.score) + ", " + str(self.rank) + ", " + self.interest)
 
     def printinterest(self):
         print("子类对象的interest是:" + self.interest)
